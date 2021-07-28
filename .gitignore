@@ -1,6 +1,5 @@
 .idea/
 node_modules/
-app/css/*.css
 app/js/*.min.js
 app/*.html
 package-lock.json
