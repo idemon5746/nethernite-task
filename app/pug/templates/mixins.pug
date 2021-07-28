@@ -1,0 +1,32 @@
+mixin shop-container
+  .container.shop-container
+    .row.justify-content-center
+      .col-11.col-sm-12
+        // add class shop-sections_no-scrollbar for hiding scrollbar
+        .shop-sections
+          .shop-section
+            .shop-section__title Кристаллы Незера
+            .shop-section__items
+              - for(var x = 0; x < 9; x++)
+                .shop-section__item.shop-section__item_has-bonus.lot
+                  .lot__bonus.lot__bonus_coin
+                    span=lotsCrystal[x].bonus
+                  img(src=`img/crystals-${x + 1}.png`).lot__photo
+                  .lot__count=lotsCrystal[x].count
+                  .lot__name Handful of Coins
+                  .lot__button Купить
+                    span
+                      i.dollar
+                      | 10
+          .shop-section
+            .shop-section__title Монеты Незера
+            .shop-section__items
+              - for(var x = 0; x < 6; x++)
+                .shop-section__item.lot
+                  img(src=`img/coins-${x + 1}.png`).lot__photo
+                  .lot__count=lotsCoins[x]
+                  .lot__name Handful of Coins
+                  .lot__button Купить
+                    span
+                      i.crystal
+                      | 10

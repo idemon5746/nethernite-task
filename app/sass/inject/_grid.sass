@@ -1,0 +1,87 @@
+.container-fluid,
+.container
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	padding-left: 15px
+	padding-right: 15px
+
+.container
+	max-width: 1010px
+	&-fluid
+		max-width: 1396px
+
+.row
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	margin-right: -15px
+	margin-left: -15px
+
+	> [class^=col-]
+		min-height: 1px
+		padding-right: 15px
+		padding-left: 15px
+		position: relative
+		width: 100%
+
+
+@for $i from 1 through 12
+	.col-#{$i}
+		flex: 0 0 (100% / ( 12 / $i ))
+		max-width: 100% / ( 12 / $i )
+	.push-#{$i}
+		margin-left: 100% / ( 12 / $i )
+		@media (max-width: 990px)
+			margin-left: 0
+	.order-#{$i}
+		order: $i
+
+$grid-breaks: (xs: 576px, sm: 768px, md: 992px, lg: 1200px)
+$displays: (block, none, flex)
+
+@each $display-name in $displays
+	.d-#{$display-name}
+		display: $display-name !important
+		@if $display-name == flex
+			flex-wrap: wrap
+
+@each $name, $break in $grid-breaks
+	@media (min-width: $break)
+		@for $i from 1 through 12
+			.col-#{$name}-#{$i}
+				flex: 0 0 (100% / ( 12 / $i ))
+				max-width: 100% / ( 12 / $i )
+			.order-#{$name}-#{$i}
+				order: $i
+		@each $display-name in $displays
+			.d-#{$name}-#{$display-name}
+				display: $display-name !important
+				@if $display-name == flex
+					flex-wrap: wrap
+
+$i: 0
+@while ($i <= 15)
+	.padding
+		&-#{$i}
+			padding: ($i * 1px) !important
+		&-l-#{$i}
+			padding-left: ($i * 1px) !important
+		&-r-#{$i}
+			padding-right: ($i * 1px) !important
+		&-t-#{$i}
+			padding-top: ($i * 1px) !important
+		&-b-#{$i}
+			padding-bottom: ($i * 1px) !important
+	.margin
+		&-#{$i}
+			margin: ($i * 1px) !important
+		&-l-#{$i}
+			margin-left: ($i * 1px) !important
+		&-r-#{$i}
+			margin-right: ($i * 1px) !important
+		&-t-#{$i}
+			margin-top: ($i * 1px) !important
+		&-b-#{$i}
+			margin-bottom: ($i * 1px) !important
+	$i: $i + 5

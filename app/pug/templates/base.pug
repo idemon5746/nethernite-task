@@ -1,0 +1,25 @@
+include mixins
+
+doctype html
+
+block variables
+
+html(lang="en")
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1, width=device-width")
+    // STYLES
+    block styles
+
+    // inject-css css/inject/header.css
+
+    link(type="text/css", rel="stylesheet", href="css/main.css")
+    title
+      block title
+  body(class= bodyClass)
+    include header
+
+    block body
+
+    script(src='js/libs-jquery.min.js')
+    script(src="js/main-scripts.min.js")

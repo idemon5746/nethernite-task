@@ -1,0 +1,23 @@
+header
+  .container-fluid
+    .row.align-items-center
+      .col-2
+        a(href="/").header-button.header-button_border-right
+          img(src="img/header-back-icon.png")
+          span.header-button__text Back
+      .col-8
+        .header-currencies
+          .header-currencies__item.currency-item.currency-item_coin
+            img(src="img/coins_header.png").currency-item__photo
+            .currency-item__balance 100 254
+              span Coins
+            .currency-item__button +
+          .header-currencies__item.currency-item.currency-item_crystals
+            img(src="img/crystals_header.png").currency-item__photo
+            .currency-item__balance 1 254
+              span Crystals
+            .currency-item__button +
+      .col-2
+        a(href="/").header-button.header-button_border-left.header-button_to-right
+          img(src="img/header-home-icon.png")
+          span.header-button__text home

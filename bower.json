@@ -1,0 +1,14 @@
+{
+  "name": "MLF",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Donchenko Dmitriy"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "fontawesome": "^5.7.2"
+  }
+}

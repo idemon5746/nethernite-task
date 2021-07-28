@@ -1,0 +1,230 @@
+.shop
+	&-content
+		padding: 10px 0 54px
+		@media (max-width: 865px)
+			padding: 0 0 24px
+	&-container
+		@media (max-width: 765px)
+			max-width: 540px
+		@media (max-width: 530px)
+			max-width: 340px
+		.row > [class^=col-]
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 15px
+				right: 20px
+				height: 156px
+				background: linear-gradient(0deg, #262435 0%, rgba(38, 36, 53, 0) 100%)
+				border-radius: 0px 0px 10px 10px
+				pointer-events: none
+				z-index: 2
+				@media (max-width: 765px)
+					height: 132px
+	&-sections
+		position: relative
+		background: #242333
+		box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5)
+		border-radius: 0px 0px 10px 10px
+		padding: 24px 0 78px
+		overflow: auto
+		max-height: calc(100vh - 207px)
+		+customize-scroll(#682FBD, #242333)
+		@media (max-width: 920px)
+			max-height: calc(100vh - 176px)
+		@media (max-width: 865px)
+			max-height: calc(100vh - 142px)
+		@media (max-width: 765px)
+			border-radius: 10px
+			padding-top: 18px
+			padding-bottom: 48px
+		&_no-scrollbar
+			scrollbar-width: none
+			&::-webkit-scrollbar
+				width: 0
+	&-section
+		padding-left: 26px
+		padding-right: 26px
+		@media (max-width: 765px)
+			padding-left: 11px
+			padding-right: 11px
+		&:not(:last-child)
+			padding-bottom: 30px
+			margin-bottom: 30px
+			border-bottom: 1px solid rgba(#9794C6, 0.1)
+		&__title
+			margin-bottom: 20px
+			text-align: center
+			font-family: 'LeksaSans', sans-serif
+			font-size: 30px
+			line-height: 37px
+			color: #ffffff
+			@media (max-width: 765px)
+				display: none
+		&__items
+			display: grid
+			grid-auto-rows: 299px
+			grid-template-columns: repeat(4, 217px)
+			gap: 20px 20px
+			justify-content: center
+			@media (max-width: 991px)
+				grid-template-columns: repeat(4, auto)
+			@media (max-width: 885px)
+				grid-template-columns: repeat(3, 217px)
+			@media (max-width: 765px)
+				grid-template-columns: repeat(2, 217px)
+			@media (max-width: 530px)
+				grid-template-columns: repeat(2, 124px)
+				grid-auto-rows: 171px
+		&__item
+			padding: 20px 20px 15px
+			background-image: url('../img/lot-bg.png')
+			background-position: center
+			background-repeat: no-repeat
+			background-size: contain
+			box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25)
+			@media (max-width: 530px)
+				padding: 21px 5px 15px
+			&_has-bonus
+				position: relative
+				.lot__bonus
+					display: flex !important
+					flex-wrap: wrap
+					align-items: center
+					justify-content: center
+			.lot
+				&__bonus
+					position: absolute
+					top: 0
+					left: 0
+					display: none
+					width: 83px
+					height: 73px
+					font-size: 13px
+					line-height: 21px
+					text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.45)
+					clip-path: polygon(52% 0, 100% 0, 0 100%, 0 56%)
+					background: linear-gradient(53.76deg, #FF4910 10.28%, #FF4910 87.14%)
+					z-index: 1
+					@media (max-width: 530px)
+						width: 65px
+						height: 56px
+					&:after
+						content: ''
+						position: absolute
+						top: 8px
+						left: 3px
+						width: 69px
+						height: 60px
+						clip-path: polygon(52% 0, 94% 0, 0 94%, 0 57%)
+						background: linear-gradient(227.77deg, rgba(220, 43, 25, 0) 19.26%, #DC2B19 93.74%)
+						z-index: -1
+						@media (max-width: 530px)
+							width: 54px
+							height: 47px
+					&_coin
+						span
+							&:before
+								content: ''
+								display: block
+								width: 18px
+								height: 18px
+								margin-right: 3px
+								background-image: url('../img/bonus-coin.png')
+					span
+						+display-flex-center
+						transform: rotate(-42deg) translate(-5px, -13px)
+						@media (max-width: 530px)
+							transform: rotate(-42deg) translate(-5px, -11px)
+						&:before
+							content: ''
+				&__photo
+					display: block
+					width: 120px
+					height: 120px
+					margin: 0 auto 16px
+					@media (max-width: 530px)
+						width: 83px
+						height: 48px
+						margin-bottom: 6px
+				&__count
+					font-size: 30px
+					line-height: 36px
+					font-weight: bold
+					text-align: center
+					@media (max-width: 530px)
+						font-size: 20px
+						line-height: 32px
+				&__name
+					margin-bottom: 25px
+					font-size: 14px
+					line-height: 22px
+					text-align: center
+					@media (max-width: 530px)
+						font-size: 11px
+						line-height: 17px
+						margin-bottom: 7px
+				&__button
+					position: relative
+					+display-flex-center
+					width: fit-content
+					margin: 0 auto
+					padding: 0 24px
+					min-height: 48px
+					text-align: center
+					font-size: 14px
+					line-height: 16px
+					font-weight: 700
+					z-index: 1
+					cursor: pointer
+					@media (max-width: 530px)
+						font-size: 11px
+						line-height: 13px
+						width: 98px
+						padding: 0
+						min-height:  27px
+					&:after,
+					&:before
+						content: ''
+						position: absolute
+						border-radius: 146px
+						z-index: -1
+					&:before
+						background: linear-gradient(90deg, #682FBD 0%, #CB4CBC 100%)
+						top: 0
+						right: 0
+						bottom: 0
+						left: 0
+					&:after
+						background: linear-gradient(90deg, #242333 0%, #3C3B53 100%)
+						top: 2px
+						right: 2px
+						bottom: 2px
+						left: 2px
+						transition: all .5s
+						@media (max-width: 530px)
+							top: 0
+							right: 0
+							bottom: 0
+							left: 0
+							opacity: 0
+					&:hover
+						&:after
+							opacity: 0
+							@media (max-width: 530px)
+								opacity: 1
+					span
+						+display-flex-center
+						margin-left: 22px
+						line-height: normal
+						@media (max-width: 530px)
+							margin-left: 11px
+						i
+							&.dollar
+								margin-right: 4px
+							&.crystal
+								margin-right: 6px
+								@media (max-width: 530px)
+									width: 17px
+									height: 17px

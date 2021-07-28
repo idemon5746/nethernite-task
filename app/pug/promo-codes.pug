@@ -1,0 +1,21 @@
+extends templates/base
+
+block variables
+    - var bodyClass = 'main-bg'
+    - var lotsCrystal = [ {count: 100, bonus: 'x500'}, {count: 500, bonus: 'x500'}, {count: 1000, bonus: 'x750k'}, {count: 1500, bonus: 'x500'}, {count: 100, bonus: 'x500'}, {count: 500, bonus: 'x500'}, {count: 1000, bonus: 'x750k'}, {count: 1500, bonus: 'x500'},{count: 100, bonus: 'x500'}]
+    - var lotsCoins = [ 'x1000', 'x5000', 'x10000', 'x10000', 'x1000', 'x5000',]
+
+block title
+  |index
+block body
+  section.shop-content
+    .container.tabs-container
+      .row
+        .col-12
+          .tabs
+            a(href="monster-boxes.html").tabs__item Монстр Боксы
+            a(href="index.html").tabs__item Банк
+            a(href="sets.html").tabs__item Наборы
+            a(href="special.html").tabs__item Спец<wbr>предложения
+            a(href="promo-codes.html").tabs__item.tabs__item_active Промо<wbr>коды
+    +shop-container

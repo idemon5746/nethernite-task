@@ -1,0 +1,79 @@
+@import "vars"
+@import "functions"
+@import "mixins"
+@import "icons"
+@import "animations"
+
+.main-bg
+	background-image: url('../img/bg-main.png')
+	background-repeat: no-repeat
+	background-position: center 90px
+
+.tabs
+	display: flex
+	justify-content: space-between
+	@media (max-width: 865px)
+		margin-bottom: 11px
+	&-container
+		@media (max-width: 865px)
+			padding: 0
+			overflow: hidden
+	&__item
+		position: relative
+		flex-basis: 188px
+		padding: 14px 10px
+		background: #212031
+		border-radius: 10px 10px 0 0
+		font-size: 20px
+		line-height: 25px
+		text-align: center
+		color: rgba(#9794C6, 0.5)
+		font-family: 'LeksaSans', sans-serif
+		@media (max-width: 865px)
+			flex-basis: 100%
+			+display-flex-center
+			padding: 10px
+			font-size: 14px
+			line-height: 14px
+			background-color: #181723
+			border-radius: 0
+			overflow-wrap: normal
+			word-wrap: break-word
+			word-break: normal
+			line-break: auto
+			hyphens: manual
+			color: #9794C6
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 3px
+			opacity: 0
+			background: linear-gradient(90deg, #F52CBF 0%, #FF7C46 100%)
+			transition: all 0.5s
+		&:hover
+			color: #ffffff
+			&:after
+				opacity: 0.5
+		+active
+			color: #ffffff
+			@media (max-width: 865px)
+				background: linear-gradient(0deg, rgba(#F52CBF, 0.1) 0%, #181723 100%)
+			&:after
+				opacity: 0.2
+			&:before
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 20px
+				right: 20px
+				height: 3px
+				background: linear-gradient(90deg, #F52CBF 0%, #FF7C46 100%)
+				@media (max-width: 865px)
+					left: 13px
+					right: 13px
+
+// main page styles
+@import "index"

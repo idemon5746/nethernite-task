@@ -1,0 +1,65 @@
+=active
+  &_active
+    cursor: default
+    pointer-events: none
+    @content
+
+=font-face($name, $file, $format, $weight)
+  @font-face
+    font-family: $name
+    src: url($file) format($format)
+    font-style: normal
+    font-weight: $weight
+
+=display-flex
+  display: flex
+  flex-wrap: wrap
+
+=display-flex-center
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+
+=customize-scroll($trackColor, $bg)
+  scrollbar-color: $trackColor $bg
+  scrollbar-width: thin
+  &::-webkit-scrollbar-track
+    background-color: $bg
+  &::-webkit-scrollbar
+    width: 5px
+    height: 5px
+    background-color: $bg
+  &::-webkit-scrollbar-thumb
+    background-color: $trackColor
+
+=customize-selection($textColor, $bgColor)
+  *::selection
+    color: $textColor
+    background-color: $bgColor
+
+=split-colors-on-hover($textColor, $bgColor, $border: 1px)
+  color: $textColor
+  background-color: $bgColor
+  border: $border solid $bgColor
+  transition: .5s
+  &:hover
+    color: $bgColor
+    background-color: $textColor
+
+=h-normal-sizes($selectors)
+  $sizes: (1: 0, 2: 0.5, 3: 0.75, 4: 1, 5: 1.25, 6: 1.5)
+
+  @each $selector in $selectors
+    @each $i, $size in $sizes
+      #{$selector} h#{$i},
+      #{$selector} .h#{$i}
+        font-size: ( 2.5 - $size ) * 1em
+        font-weight: bold
+
+=progress-bar-style
+  &::-webkit-progress-value
+    @content
+
+  &::-moz-progress-bar
+    @content
